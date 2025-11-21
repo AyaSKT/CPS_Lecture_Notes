@@ -46,18 +46,14 @@ j = 1\cdot e^{j\pi/2}, & f < 0
 #### SSB AM
 对于消息信号 $m(t)$ 的频谱 $M(f)$，可以将其分解为右半部分 (right half) 和左半部分 (left half) 来进行分析。
 
-右半信号定义为消息谱在正频率部分的分量：
-
- $$\begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned}$$ 
+右半信号定义为消息谱在正频率部分的分量： $$\begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned}$$ 
 
 其中：
 - $u(f)$ 是单位阶跃函数 (unit step function)
 - $\mathrm{sgn}(f)$ 是符号函数 (signum function)
 - $M_h(f)$ 是 $M(f)$ 的希尔伯特变换 (Hilbert transform)
 
-左半信号定义为消息谱在负频率部分的分量：
-
- $$\begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned}$$ 
+左半信号定义为消息谱在负频率部分的分量： $$\begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned}$$ 
 ![](Assests/Pasted%20image%2020251121084824.png)
 
 -   上边带频谱可以用消息信号 $m(t)$ 及其希尔伯特变换 $m_h(t)$ 表示为：
@@ -71,8 +67,7 @@ j = 1\cdot e^{j\pi/2}, & f < 0
     -   上边带信号： $\varphi_{\mathrm{USB}}(t) = m(t)\cos\omega_{c}t - m_{h}(t)\sin\omega_{c}t$ 
     -   下边带信号： $\varphi_{\mathrm{LSB}}(t) = m(t)\cos\omega_{c}t + m_{h}(t)\sin\omega_{c}t$ 
 
--   单边带信号的通用时域表达式可以统一写为：
-    $$\varphi_{\mathrm{SSB}}(t) = m(t)\cos\omega_{c}t \mp m_{h}(t)\sin\omega_{c}t$$
+-   单边带信号的通用时域表达式可以统一写为： $$\varphi_{\mathrm{SSB}}(t) = m(t)\cos\omega_{c}t \mp m_{h}(t)\sin\omega_{c}t$$
 
 #### SSB Signal Generation
 ![](Assests/Pasted%20image%2020251121091453.png)
@@ -104,17 +99,13 @@ j = 1\cdot e^{j\pi/2}, & f < 0
 #### SSB Demodulation
 其Demodulator与DSB-SC的synchronous demodulator完全一致
 ![](Assests/Pasted%20image%2020251121110222.png)
--   单边带抑制载波 (SSB-SC) 信号表达式为：
-    $$\varphi_{\mathrm{SSB}}(t)=m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t$$
+-   单边带抑制载波 (SSB-SC) 信号表达式为： $$\varphi_{\mathrm{SSB}}(t)=m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t$$
 
--   解调过程将该信号与载波相乘：
-    $$\varphi_{\mathrm{SSB}}(t) \cos \omega_{c} t=[m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t] \cdot 2 \cos \omega_{c} t$$
+-   解调过程将该信号与载波相乘： $$\varphi_{\mathrm{SSB}}(t) \cos \omega_{c} t=[m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t] \cdot 2 \cos \omega_{c} t$$
 
--   展开后得到：
-    $$=m(t)[1+\cos 2 \omega_{c} t] \mp m_{h}(t) \sin 2 \omega_{c} t$$
+-   展开后得到： $$=m(t)[1+\cos 2 \omega_{c} t] \mp m_{h}(t) \sin 2 \omega_{c} t$$
 
--   可进一步表示为：
-    $$=m(t)+\underbrace{[m(t) \cos 2 \omega_{c} t \mp m_{h}(t) \sin 2 \omega_{c} t]}_{\text{载波频率为 } 2\omega_{c} \text{ 的 SSB-SC 信号}}$$
+-   可进一步表示为： $$=m(t)+\underbrace{[m(t) \cos 2 \omega_{c} t \mp m_{h}(t) \sin 2 \omega_{c} t]}_{\text{载波频率为 } 2\omega_{c} \text{ 的 SSB-SC 信号}}$$
 
 -   解调结果分析：
     -   产生基带信号 (baseband signal) $m(t)$
