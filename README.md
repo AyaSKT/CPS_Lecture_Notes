@@ -2,7 +2,7 @@
 
 ## Index
 
-- [CPS Lecture 6 Amplitude Modulation DSB-SC](Notes/"CPS Lecture 6 Amplitude Modulation DSB-SC.md")
+- [CPS Lecture 6 Amplitude Modulation DSB-SC](Notes/CPS Lecture 6 Amplitude Modulation DSB-SC.md)
 - [Lecture 7 : ADC & Interrupts (模数转换器与中断)](Lectures/Lecture7.md)
   - [Lecture 7 Fix : Working Principle of ADC (工作原理)](Lectures/Lecture7_Fix.md)
 - [Lecture 8 : DAC (数模转换器)](Lectures/Lecture8.md)
