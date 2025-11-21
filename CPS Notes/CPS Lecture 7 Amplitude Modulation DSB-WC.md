@@ -9,10 +9,10 @@
 
 #### DSB-WC Modulation
 $$\varphi_{AM}(t) = [A + m(t)] \cos{(2 \pi f_c t)}$$
-![[Assests/Pasted image 20251120143359.png]]
+![](Assests/Pasted%20image%2020251120143359.png)
 其频谱与DSB-SC基本一致，但在 $\pm f_c$ 处有两个额外的冲激响应。
 $$[A+m(t)] \cos (2 \pi f_c t) \Leftrightarrow \frac{1}{2}[M(f+f_c)+M(f-f_c)]+\frac{A}{2}[\delta(f+f_c)+\delta(f-f_c)]$$
-![[Assests/Pasted image 20251120143706.png]]
+![](Assests/Pasted%20image%2020251120143706.png))
 
 #### DSB-WC的缺点
 
@@ -34,12 +34,12 @@ $$
 - 当载波振幅小于消息信号振幅时，信号包络将出现**正值和负值**。
 - 此时包络被整流，成为消息信号的**失真版本**(distorted version)。
 - 这种情况称为**载波过调制**(over-modulated)，会导致信号严重失真。
-![[Assests/Pasted image 20251120145341.png]]
+![](Assests/Pasted%20image%2020251120145341.png)
 
 #### AM 调制指数（Modulation Index）
 The modulation index μ is the ratio of the peak value of the message signal( $m_p$ ) to the amplitude of the carrier.
 $$\mu = \frac{m_p}{A_c}$$
-![[Assests/Pasted image 20251120145953.png]]
+![](Assests/Pasted%20image%2020251120145953.png)
 **更大的调制指数可以减少功耗，但更难以解调。当 $\mu > 1$ 时出现过调制**
 
 #### AM 功率效率
@@ -93,7 +93,7 @@ $$
 否则当 $A + m(t) < 0$ 时会出现相位反转 (phase reversals)。
 
 包络检波器 (envelope detector) 用于从AM调制信号中提取原始基带信号，是常规调幅广播接收机中的核心解调电路.
-![[Assests/Pasted image 20251120152711.png]]
+![](Assests/Pasted%20image%2020251120152711.png)
 
 - 当输入信号 $v_i(t)$ 处于正半周时，二极管正向偏置导通
 - 电容 $C$ 通过二极管快速充电，充电时间常数 $\tau_{charge} = R_d C$ 很小
@@ -110,7 +110,7 @@ $$
 电容两端的电压 $v_c(t)$ 近似再现了原始调制信号的包络 $A + m(t)$，从而完成解调过程。
 
 整流检波器将半波整流波形应用于低通滤波器 (low-pass filter)，不同于传统AM包络检波器中的平滑电容器。
-![[Assests/Pasted image 20251120153109.png]]
+![](Assests/Pasted%20image%2020251120153109.png)
 整流后的信号可表示为：
 $$
 V_{\text{rect}}(t) = [(A_C + m(t)) \cos(\omega_C t)] \cdot p(t)
@@ -132,3 +132,4 @@ $$
 - 关键优势：不需要在接收端生成载波信号
 
 这种检测方法本质上是一种准同步检测，通过开关函数的乘法操作有效提取基带信号，同时避免了传统同步检测中对本地载波生成的要求。
+

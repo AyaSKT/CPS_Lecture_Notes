@@ -6,9 +6,9 @@
 -   对于一个带宽为  $B$  Hz 的基带信号  $m(t)$ ，DSB 调制需要两倍于此，即  $2B$  Hz 的射频带宽 (radio-frequency bandwidth) 进行传输。
 -   由于每一个边带都承载了消息信号 (message signal) 的完整信息，因此其中任意一个都足以在接收端恢复出原始消息信号。
 -   单边带调制 (Single-Sideband modulation, SSB) 通过移除 (removes) 下边带 (LSB) 或上边带 (USB)，使得传输一个消息信号  $m(t)$  仅需要  $B$  Hz 的带宽，从而提高了调幅 (amplitude modulation) 的频谱效率 (spectral efficiency)。
-![[Assests/Pasted image 20251121083206.png]]
+![](Assests/Pasted%20image%2020251121083206.png)
 **SSB的transimitter和receiver必须提前约定好使用LSB还是USB**
-![[Assests/Pasted image 20251121083308.png]]
+![](Assests/Pasted%20image%2020251121083308.png)
 
 #### 希尔伯特变换 Hilbert Transform
 希尔伯特变换或称正交滤波 (quadrature filtering) 是一种全通滤波操作 (all-pass filtering operation)。该变换保持输入信号幅度谱 (magnitude spectrum) 不变，但会对其频谱产生特定相移 (phase shift)：
@@ -21,17 +21,17 @@ $$x_h(t)=\mathcal{H}\{x(t)\}=\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\alph
 $$x_h(t) = x(t) * \frac{1}{\pi t}$$
 
 希尔伯特变换在频域中定义为信号频谱与传递函数的乘积：
-$$X_h(f) = -jX(f)\operatorname{sgn}(f)$$
+$$X_h(f) = -jX(f)\mathrm{sgn}(f)$$
 
 希尔伯特变换器的传递函数为：
-$$H(f) = -j\operatorname{sgn}(f) = 
+$$H(f) = -j\mathrm{sgn}(f) = 
 \begin{cases} 
 -j = 1\cdot e^{-j\pi/2}, & f > 0 \\
 j = 1\cdot e^{j\pi/2}, & f < 0 
 \end{cases}$$
 
 从图示可以看出希尔伯特变换的频域特性：
-![[Assests/Pasted image 20251121084105.png]]
+![](Assests/Pasted%20image%2020251121084105.png)
 
 - $|H(f)| = 1$（对所有  $f \neq 0$ ）
 - 幅度谱为常数1，表明是**全通滤波器** (all-pass filter)
@@ -44,24 +44,24 @@ j = 1\cdot e^{j\pi/2}, & f < 0
 - 对正频率分量产生  $-\pi/2$  的相移
 - 对负频率分量产生  $+\pi/2$  的相移
 - 通过改变  $m(t)$  每个频率分量的相位来产生其希尔伯特变换  $m_h(t)$
-![[Assests/Pasted image 20251121084326.png]]
+![](Assests/Pasted%20image%2020251121084326.png)
 
 #### SSB AM
 对于消息信号  $m(t)$  的频谱  $M(f)$ ，可以将其分解为右半部分 (right half) 和左半部分 (left half) 来进行分析。
 
 右半信号定义为消息谱在正频率部分的分量：
 
-$$ \begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\operatorname{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned} $$
+$$ \begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned} $$
 
 其中：
 - $u(f)$ 是单位阶跃函数 (unit step function)
-- $\operatorname{sgn}(f)$ 是符号函数 (signum function)
+- $\mathrm{sgn}(f)$ 是符号函数 (signum function)
 - $M_h(f)$ 是  $M(f)$  的希尔伯特变换 (Hilbert transform)
 
 左半信号定义为消息谱在负频率部分的分量：
 
-$$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\operatorname{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned} $$
-![[Assests/Pasted image 20251121084824.png]]
+$$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned} $$
+![](Assests/Pasted%20image%2020251121084824.png)
 
 -   上边带频谱可以用消息信号  $m(t)$  及其希尔伯特变换  $m_h(t)$  表示为：
     $$
@@ -70,7 +70,7 @@ $$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\operatorname{sgn}(
     &=\frac{1}{2}[M(f-f_{c}) + M(f+f_{c})] - \frac{1}{2j}[M_{h}(f-f_{c}) - M_{h}(f+f_{c})]
     \end{aligned}
     $$
-![[Assests/Pasted image 20251121091129.png]]
+![](Assests/Pasted%20image%2020251121091129.png)
 
 -   利用傅里叶变换的频移特性，进行傅里叶反变换得到时域表达式：
     -   上边带信号： $\varphi_{\mathrm{USB}}(t) = m(t)\cos\omega_{c}t - m_{h}(t)\sin\omega_{c}t$ 
@@ -82,15 +82,7 @@ $$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\operatorname{sgn}(
     $$
 
 #### SSB Signal Generation
-![[Assests/Pasted image 20251121091453.png]]
-
--   **Advantages (优点)**
-    -   它可以在任意频率上生成SSB信号，因此不需要**上变频级 (upconverter stage)**。
-    -   它可以使用**低音频频率 (low audio frequencies)** 作为调制信号。
-    -   可以轻松地在**不同边带之间切换 (switch from one sideband to the other)**。
-
--   **Limitations (局限性)**
-    -   要求在**所有调制频率上实现精确的90°相移 (correct phase shift of 90°)**，这在实际中**难以实现 (difficult to achieve)**。
+![](Assests/Pasted%20image%2020251121091453.png)
 
 ##### 选择性滤波法 (Selective Filtering)
 ###### 单步调制 One-step
@@ -100,11 +92,11 @@ $$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\operatorname{sgn}(
     -   经调制后，在载波频率  $f_c$  处，DSB 信号的边带间隙带宽变为  $2\omega_{g}=4\pi f_{g}$ 。
 -   **间隙带宽的作用**：该带宽允许使用渐变截止滤波器 (gradual cut-off filters)，降低了实现理想陡峭滤波器的难度。
 -   **滤波器性能要求**：为最小化邻道干扰 (adjacent channel interference)，对不期望边带的衰减应至少达到 40 dB。
-![[Assests/Pasted image 20251121093146.png]]
+![](Assests/Pasted%20image%2020251121093146.png)
 
 ###### 两步调制 Two-step / Weaver's Method
 -   当载波频率过高，间隙带 (Gap-band) 小于  $2f_g$  时，采用中间载波频率  $\omega_{c1}$  先生成一个具有有效更宽间隙带的中间单边带信号 (Intermediate SSB signal)。
-![[Assests/Pasted image 20251121093853.png]]
+![](Assests/Pasted%20image%2020251121093853.png)
 
 -   为防止下边带 (Lower Sideband) 在频率原点附近产生干扰，需满足设计条件：
     $$2(\omega_{c1}+\omega_{g})\geq 0.01\omega_{c2}$$
@@ -120,7 +112,7 @@ $$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\operatorname{sgn}(
 
 #### SSB Demodulation
 其Demodulator与DSB-SC的synchronous demodulator完全一致
-![[Assests/Pasted image 20251121110222.png]]
+![](Assests/Pasted%20image%2020251121110222.png)
 -   单边带抑制载波 (SSB-SC) 信号表达式为：
     $$
     \varphi_{\mathrm{SSB}}(t)=m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t

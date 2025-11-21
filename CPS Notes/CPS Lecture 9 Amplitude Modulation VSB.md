@@ -17,7 +17,7 @@
     -   模拟电视系统 NTSC (The analog TV system NTSC)
     -   磁共振成像 (Magnetic Resonance Imaging, MRI)，用于减少需要采集的数据量。
 
-![[Assests/Pasted image 20251121112638.png]]
+![](Assests/Pasted%20image%2020251121112638.png)
 #### VSB Modulation
 -   VSB 信号的生成采用标准 AM 或 DSB-SC 调制：
     $$ \phi_{DSB}(t)=m(t) 2\cos\omega_c t $$
@@ -25,18 +25,18 @@
     然后使其通过一个 VSB 成形滤波器 $ H_i(f) $：
     $$ \phi_{VSB}(f)=[M(f+f_c)+M(f-f_c)]H_i(f) $$
 -   与 SSB 的锐截止滤波器不同，VSB 滤波器是渐变截止滤波器，更易于实现。
-![[Assests/Pasted image 20251121113106.png]]
+![](Assests/Pasted%20image%2020251121113106.png)
 
 #### VSB Demodulation
 Baseband signal可以被一个有恰当的VSB filter $H_0(f)$ 同步检波器精确还原。
 如果载波足够大，baseband signal甚至可以被包络检波还原。
-![[Assests/Pasted image 20251121135846.png]]
+![](Assests/Pasted%20image%2020251121135846.png)
 
 #### VSB Shaping Filter
 需要通过同步解调 (synchronous demodulation) 从接收到的 VSB 信号中恢复出原始消息信号 $ m(t) $。
 
 ## 解调过程
-1. 与载波相乘
+1. 与载波相乘  
 将接收到的 VSB 信号 $\phi_{VSB}(t)$ 乘以本地载波 $2\cos(\omega_c t)$：
 
 时域表达式：
@@ -56,11 +56,10 @@ $$ = \phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c) $$
 $$ E(f)H_o(f) = [\phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c)]H_o(f) = M(f) $$
 
 频谱图示说明
-1.  $\Phi_{VSB}(f)$：原始 VSB 信号频谱
-2.  $E(f)$：解调后的频谱，显示重叠区域
+1.  $\Phi_{VSB}(f)$：原始 VSB 信号频谱  
+2.  $E(f)$：解调后的频谱，显示重叠区域  
 3.  $E(f)H_o(f)$：经过滤波器补偿后的频谱，恢复出 $M(f)$
-![[Assests/Pasted image 20251121140658.png]]
-
+![](Assests/Pasted%20image%2020251121140658.png)
 
 求解接收端滤波器 $H_{o}(f)$：
 
