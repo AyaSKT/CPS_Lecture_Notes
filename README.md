@@ -1,4 +1,7 @@
 # CPS_Lecture_Notes
+推荐下载到obsidian内打开，github预览可能存在公式渲染不正确。  
+如果对你有帮助，就请点个Star吧，谢谢喵~  
+
 
 ## Index
 
