@@ -28,10 +28,10 @@ $$
 $$
 \phi_{DSB}(f)=[M(f+f_c)+M(f-f_c)]
 $$
+
     然后使其通过一个 VSB 成形滤波器 $ H_i(f) $：
 
 $$
-
 \phi_{VSB}(f)=[M(f+f_c)+M(f-f_c)]H_i(f)
 $$
 
