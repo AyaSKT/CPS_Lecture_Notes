@@ -1,51 +1,71 @@
 ## 使用音调的 FM (FM with a Tone)
 ### 消息信号的积分:
 需要对消息信号进行积分，因为频率调制取决于消息信号的累积值，而不仅仅是其瞬时值。
+\
 $$
 a(t) = \int_{-\infty}^{t} m(u) du = \frac{1}{2\pi f_m} \sin(2\pi f_m t)
-$
+$$
+
 这个积分代表 FM 中使用的**相位项**。
 
 ### FM 信号表示
 FM 信号可以写作：
+\
 $$
 \hat{\varphi}^{FM}(t) = Ae^{j[\omega_c t + k_f a(t)]}
-$
+$$
+
 **简化形式:** 将积分 $a(t)$ 代入 FM 信号方程： 
+\
 $$
 \hat{\varphi}^{FM}(t) = Ae^{j[\omega_c t + \frac{k_f}{2\pi f_m} \sin(2\pi f_m t)]}
-$
+$$
+
 #### **与贝塞尔函数的联系 (Connection to Bessel Functions):** 
 **FM 作为周期函数:**
 项 $e^{j\beta \sin(2\pi f_m t)}$，其中 $\beta = \frac{k_f}{2\pi f_m}$，是一个周期函数。我们可以使用傅里叶级数展开此函数：
-$
+\
+$$
+
 e^{j\beta \sin(2\pi f_m t)} = \sum_{n=-\infty}^{+\infty} c_n(\beta) e^{j 2\pi n f_m t}
 $$
 其中 $c_n(\beta)$ 是傅里叶系数，它决定了每个谐波的幅度。
 周期函数 $f(t)$ 的通用傅里叶系数公式为：
-$
+\
+$$
+
 c_n = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{-j 2\pi n f_m t} dt
 $$
 系数 $c_n(\beta)$ 是通过对函数进行一个周期的积分得到的：
-$
+\
+$$
+
 c_n(\beta) = \frac{1}{T} \int_{-\frac{1}{2f_m}}^{\frac{1}{2f_m}} e^{j\beta \sin(2\pi f_m t)} e^{-j 2\pi n f_m t} dt
 $$
 该积分引出贝塞尔函数：
-$
+$$
+
 c_n(\beta) = J_n(\beta)
 $$
 项 $J_n(\beta)$ 是第一类 n 阶贝塞尔函数。
 $J_n(\beta)$ 表示围绕载波频率的第 n 个边带的幅度和相位（通过符号）。 
 调制指数
-$
+\
+$$
+
 \beta = \frac{k_f}{2\pi f_m} = \frac{\Delta f}{f_m}
+\
 $$
 控制信号能量如何在不同谐波之间分布。
 
-$
-e^{j\beta \sin(2\pi f_m t)} = \sum_{n=-\infty}^{+\infty} c_n(\beta) e^{j 2\pi n f_m t}
+\
 $$
-$
+
+e^{j\beta \sin(2\pi f_m t)} = \sum_{n=-\infty}^{+\infty} c_n(\beta) e^{j 2\pi n f_m t}
+\
+$$
+$$
+
 c_n(\beta) = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{j\beta \sin(x)} e^{-jnx} dx = J_n(\beta)
 $$
 其中 $x = 2\pi f_m t$。
@@ -57,7 +77,9 @@ $$
 ---
 ## FM 解调
 瞬时频率 $\omega_{i}(t)$ 是 FM 信号相位的**导数**：
-$
+\
+$$
+
 \omega_{i}(t)=\frac{d}{dt}(\omega_{c}t+k_{f}\int_{-\infty}^{t}m(\alpha)d\alpha)=\omega_{c}+k_{f}m(t)
 $$
 ![](Assests/Pasted%20image%2020251201143821.png)
@@ -66,11 +88,14 @@ $$
 ---
 ### 基于微分的解调
 实现这一目标的最简单方法是使用理想的**微分器** (differentiator)。 对 FM 信号 $\varphi^{FM}(t)$ 应用微分：
-$
+\
+$$
 \varphi^{F\dot{M}}(t)=\frac{d}{dt}(A\cos(\omega_{c}t+k_{f}\int_{-\infty}^{t}m(\alpha)d\alpha))
 $$
+
 结果是：
-$
+\
+$$
 \varphi^{F\dot{M}}(t)=A[\omega_{c}+k_{f}m(t)]\sin\left(\omega_{c}t+k_{f}\int_{-\infty}^{t}m(\alpha)d\alpha-\pi\right)
 $$
 ### 包络检测 (Envelope Detection)
