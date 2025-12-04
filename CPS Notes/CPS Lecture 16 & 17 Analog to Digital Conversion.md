@@ -14,7 +14,7 @@
 $$
 g_{\delta}(t)=\sum_{n=-\infty}^{\infty}g(nT_{s})\delta(t-nT_{s})
 $$
-。 
+$1。 
  - $g_{\delta}(t)$ : 是瞬时（理想）采样信号。 
  - $\delta(t - nT_s)$ : 表示位于时间 $t = nT_s$ 的 $\delta$ 函数。
 
@@ -28,26 +28,26 @@ $$
 $$
 x(t) = \sum_{n=-\infty}^{\infty} x(nT_s) \,\mathrm{sinc}\left(\frac{t}{T_s} - n\right)
 $$
+
 $$
 = \sum_{n=-\infty}^{\infty} x\left(\frac{n}{2W}\right) \mathrm{sinc}(2Wt - n)
 $$
-
-现在，如果我们对前述关系式的两边求傅里叶变换，并对右边应用卷积定理的对偶形式 (dual of the convolution theorem)，我们得到：
+$1现在，如果我们对前述关系式的两边求傅里叶变换，并对右边应用卷积定理的对偶形式 (dual of the convolution theorem)，我们得到：
 $$
-X_{\delta}(f) = X(f) * \mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right]
+$1X_{\delta}(f) = X(f) * \mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right]
 $$
 利用 $\sum_{n=-\infty}^{\infty} \delta(t - nT_s)$ 的傅里叶变换，我们得到：
 $$
-\mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right] = \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
+$1\mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right] = \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
 $$
 代入前一个方程，我们得到：
 $$
-X_{\delta}(f) = X(f) * \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
+$1X_{\delta}(f) = X(f) * \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
 $$
 $$
-= \frac{1}{T_s} \sum_{n=-\infty}^{\infty} X\left(f - \frac{n}{T_s}\right)
+$1= \frac{1}{T_s} \sum_{n=-\infty}^{\infty} X\left(f - \frac{n}{T_s}\right)
 $$
 其中
 $$
-X(f) * \delta\left(f - \frac{n}{T_s}\right) = X\left(f - \frac{n}{T_s}\right)
+$1X(f) * \delta\left(f - \frac{n}{T_s}\right) = X\left(f - \frac{n}{T_s}\right)
 $$

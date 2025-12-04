@@ -10,27 +10,33 @@
 $$
 u(t) = A_c \cos{2\pi f_c t + \phi (t)}
 $$
+
 ### 瞬时频率 Instantaneous Frequency
 ![](Assests/Pasted%20image%2020251121170338.png)
 类比于高中所学的速度定义，在任意一个时间点 $t_0$ ，可以通过对相位求导得到其**瞬时频率**。
 
 一个一般的正弦波
+
 $$
 \phi(t) = A \cos \theta(t)
 $$
+
 $$
 \theta (t) = \omega_c t+ \theta_0
 $$ 
  ，其中 $\theta(t)$ 是一个一般的角度，可任意取值。
  
 有
+
 $$
 \omega_i (t)= \frac{d \theta}{dt} = \theta'(t)
 $$
 和
+
 $$
 \theta(t) = \int_{- \infty}^t \omega_i(t)du = \theta_0 + \int_{0}^t \omega_i(u)du
-$$。
+$$
+。
 我们可以通过改变 $\omega_i(t)$ 或者 $\theta(t)$ 进行调制。
 ### Phase Modulation 相位调制
 

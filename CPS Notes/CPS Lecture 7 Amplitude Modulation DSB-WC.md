@@ -11,12 +11,12 @@
 $$
 \varphi_{AM}(t) = [A + m(t)] \cos{(2 \pi f_c t)}
 $$
-![](Assests/Pasted%20image%2020251120143359.png)
+$1![](Assests/Pasted%20image%2020251120143359.png)
 其频谱与DSB-SC基本一致，但在 $\pm f_c$ 处有两个额外的冲激响应：
 $$
 [A+m(t)] \cos (2 \pi f_c t) \Leftrightarrow \frac{1}{2}[M(f+f_c)+M(f-f_c)]+\frac{A}{2}[\delta(f+f_c)+\delta(f-f_c)]
 $$
-![](Assests/Pasted%20image%2020251120143706.png))
+$1![](Assests/Pasted%20image%2020251120143706.png))
 
 #### DSB-WC的缺点
 
@@ -30,7 +30,7 @@ $$
 $$
 E(t) = A + m(t)
 $$
-其中 $A$ 是载波振幅，$m(t)$ 是消息信号。
+$1其中 $A$ 是载波振幅，$m(t)$ 是消息信号。
 
 - 当载波振幅等于或大于消息信号振幅时，调幅信号的包络是消息信号的**真实复现**（true replica）。
 - 这是调幅系统中期望的正常工作状态。
@@ -45,7 +45,7 @@ The modulation index μ is the ratio of the peak value of the message signal( $m
 $$
 \mu = \frac{m_p}{A_c}
 $$
-![](Assests/Pasted%20image%2020251120145953.png)
+$1![](Assests/Pasted%20image%2020251120145953.png)
 **更大的调制指数可以减少功耗，但更难以解调。当 $\mu > 1$ 时出现过调制**
 
 #### AM 功率效率
@@ -54,20 +54,20 @@ AM信号功率包含两个组成部分：
 $$
 \phi_{\mathrm{AM}}(t) = (A + m(t)) \cos(2\pi f_c t) = A \cos(2\pi f_c t) + m(t) \cos(2\pi f_c t)
 $$
-- 载波分量 (carrier component): $A \cos(2\pi f_c t)$
+$1- 载波分量 (carrier component): $A \cos(2\pi f_c t)$
 - 边带分量 (sidebands component): $m(t) \cos(2\pi f_c t)$
 
 ##### 载波功率(Carrier Power)
 $$
 P_c = \frac{1}{2} A^2
 $$
-载波功率是固定值，不携带信息。
+$1载波功率是固定值，不携带信息。
 
 ##### 边带功率 (Sideband Power)
 $$
 P_s = \frac{1}{2} P_m
 $$
-其中 $P_m$ 是消息信号功率，边带功率携带全部有用信息。
+$1其中 $P_m$ 是消息信号功率，边带功率携带全部有用信息。
 
 ##### 功率效率
 - 功率效率 (power efficiency) η 衡量调制技术在功耗方面的效率
@@ -75,26 +75,24 @@ $$
 $$
 \eta = \frac{\text{useful power}}{\text{total power}} = \frac{\text{sideband power}}{\text{total power}}
 $$
-
-- 边带功率 (sideband power): $P_s = \frac{1}{2} P_m$
+$1- 边带功率 (sideband power): $P_s = \frac{1}{2} P_m$
 - 总功率: $P_c + P_s$
 - 功率效率表达式:
 $$
-\eta = \frac{P_s}{P_c + P_s} = \frac{\frac{1}{2} P_m}{P_c + \frac{1}{2} P_m} = \frac{P_m}{A_c^2 + P_m}
+$1\eta = \frac{P_s}{P_c + P_s} = \frac{\frac{1}{2} P_m}{P_c + \frac{1}{2} P_m} = \frac{P_m}{A_c^2 + P_m}
 $$
-
-#### AM Demodulation
+$1#### AM Demodulation
 检测 (detection) 指从接收数据中提取信号的过程，在某些情况下等同于解调 (demodulation)。
 包络检测 (envelope detection) 要正常工作需满足两个条件：
 载波频率必须远大于调制信号带宽：
 $$
-f_c \gg \text{bandwidth of } m(t)
+$1f_c \gg \text{bandwidth of } m(t)
 $$
 否则频谱的正负分量会产生重叠 (spectral components overlap)。
 
 载波与调制信号幅度之和必须非负：
 $$
-A + m(t) \geq 0
+$1A + m(t) \geq 0
 $$
 否则当 $A + m(t) < 0$ 时会出现相位反转 (phase reversals)。
 
@@ -119,16 +117,15 @@ $$
 ![](Assests/Pasted%20image%2020251120153109.png)
 整流后的信号可表示为：
 $$
-V_{\text{rect}}(t) = [(A_C + m(t)) \cos(\omega_C t)] \cdot p(t)
+$1V_{\text{rect}}(t) = [(A_C + m(t)) \cos(\omega_C t)] \cdot p(t)
 $$
-
-其中 $p(t)$ 为开关函数，用傅里叶级数展开：
+$1其中 $p(t)$ 为开关函数，用傅里叶级数展开：
 $$
-p(t) = \frac{1}{2} + \frac{2}{\pi}[\cos(\omega_C t) - \frac{1}{3}\cos(3\omega_C t) + \frac{1}{5}\cos(5\omega_C t) - \cdots]
+$1p(t) = \frac{1}{2} + \frac{2}{\pi}[\cos(\omega_C t) - \frac{1}{3}\cos(3\omega_C t) + \frac{1}{5}\cos(5\omega_C t) - \cdots]
 $$
 相乘后得到：
 $$
-V_{\text{rect}}(t) = \frac{1}{\pi}(A_C + m(t)) + \text{其他高频项}
+$1V_{\text{rect}}(t) = \frac{1}{\pi}(A_C + m(t)) + \text{其他高频项}
 $$
 - **直流分量** (dc term): $\frac{1}{\pi}A_C$
 - **基带分量** (baseband term): $\frac{1}{\pi}m(t)$
