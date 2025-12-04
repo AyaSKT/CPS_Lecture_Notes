@@ -11,10 +11,12 @@
 
  **理想采样**： 
  - 理想的采样形式称为瞬时采样。
+
 $$
 g_{\delta}(t)=\sum_{n=-\infty}^{\infty}g(nT_{s})\delta(t-nT_{s})
 $$
-$1。 
+
+。 
  - $g_{\delta}(t)$ : 是瞬时（理想）采样信号。 
  - $\delta(t - nT_s)$ : 表示位于时间 $t = nT_s$ 的 $\delta$ 函数。
 
@@ -25,6 +27,7 @@ $1。
 假设信号 $x(t)$ 是严格带限的（band-limited），带宽为 $W$，即对于 $|f| \ge W$，有 $X(f) = 0$。 
 令 $x(t)$ 在某些基本采样间隔 $T_s$ 的倍数处被采样，其中 $T_s \le \frac{1}{2W}$。 
 那么，可以通过以下重建公式从采样值重建原始信号 $x(t)$：
+
 $$
 x(t) = \sum_{n=-\infty}^{\infty} x(nT_s) \,\mathrm{sinc}\left(\frac{t}{T_s} - n\right)
 $$
@@ -32,22 +35,33 @@ $$
 $$
 = \sum_{n=-\infty}^{\infty} x\left(\frac{n}{2W}\right) \mathrm{sinc}(2Wt - n)
 $$
-$1现在，如果我们对前述关系式的两边求傅里叶变换，并对右边应用卷积定理的对偶形式 (dual of the convolution theorem)，我们得到：
+
+现在，如果我们对前述关系式的两边求傅里叶变换，并对右边应用卷积定理的对偶形式 (dual of the convolution theorem)，我们得到：
+
 $$
-$1X_{\delta}(f) = X(f) * \mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right]
+X_{\delta}(f) = X(f) * \mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right]
 $$
+
 利用 $\sum_{n=-\infty}^{\infty} \delta(t - nT_s)$ 的傅里叶变换，我们得到：
+
 $$
-$1\mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right] = \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
+\mathcal{F}\left[ \sum_{n=-\infty}^{\infty} \delta(t - nT_s) \right] = \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
 $$
+
 代入前一个方程，我们得到：
+
 $$
-$1X_{\delta}(f) = X(f) * \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
+
+X_{\delta}(f) = X(f) * \frac{1}{T_s} \sum_{n=-\infty}^{\infty} \delta\left(f - \frac{n}{T_s}\right)
 $$
+
 $$
-$1= \frac{1}{T_s} \sum_{n=-\infty}^{\infty} X\left(f - \frac{n}{T_s}\right)
+
+= \frac{1}{T_s} \sum_{n=-\infty}^{\infty} X\left(f - \frac{n}{T_s}\right)
 $$
+
 其中
+
 $$
-$1X(f) * \delta\left(f - \frac{n}{T_s}\right) = X\left(f - \frac{n}{T_s}\right)
+X(f) * \delta\left(f - \frac{n}{T_s}\right) = X\left(f - \frac{n}{T_s}\right)
 $$

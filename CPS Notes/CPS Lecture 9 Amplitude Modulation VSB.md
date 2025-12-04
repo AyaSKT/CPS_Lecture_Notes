@@ -20,6 +20,7 @@
 ![](Assests/Pasted%20image%2020251121112638.png)
 #### VSB Modulation
 -   VSB 信号的生成采用标准 AM 或 DSB-SC 调制：
+
 $$
 \phi_{DSB}(t)=m(t) 2\cos\omega_c t
 $$
@@ -28,9 +29,12 @@ $$
 \phi_{DSB}(f)=[M(f+f_c)+M(f-f_c)]
 $$
     然后使其通过一个 VSB 成形滤波器 $ H_i(f) $：
+
 $$
-$1\phi_{VSB}(f)=[M(f+f_c)+M(f-f_c)]H_i(f)
+
+\phi_{VSB}(f)=[M(f+f_c)+M(f-f_c)]H_i(f)
 $$
+
 -   与 SSB 的锐截止滤波器不同，VSB 滤波器是渐变截止滤波器，更易于实现。
 ![](Assests/Pasted%20image%2020251121113106.png)
 
@@ -47,72 +51,97 @@ Baseband signal可以被一个有恰当的VSB filter $H_0(f)$ 同步检波器精
 将接收到的 VSB 信号 $\phi_{VSB}(t)$ 乘以本地载波 $2\cos(\omega_c t)$：
 
 时域表达式：
+
 $$
-$1e(t) = \phi_{VSB}(t) \cdot 2\cos(\omega_c t)
+e(t) = \phi_{VSB}(t) \cdot 2\cos(\omega_c t)
 $$
-$1频域表达式（通过傅里叶变换）：
+
+频域表达式（通过傅里叶变换）：
+
 $$
-$1E(f) = \phi_{VSB}(f) * [\delta(f+f_c) + \delta(f-f_c)]
+
+E(f) = \phi_{VSB}(f) * [\delta(f+f_c) + \delta(f-f_c)]
 $$
+
 $$
-$1= \phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c)
+
+= \phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c)
 $$
-$12. 频谱特性分析
+
+2. 频谱特性分析
 -   解调后在频域产生两个边带副本 (two copies of sidebands)
 -   这两个边带都偏移到了基带 (baseband) 区域
 -   关键问题：两个边带在基带区域存在**重叠 (Overlap)**
 
 3. 滤波器补偿
 需要设计滤波器 $H_o(f)$ 来补偿重叠造成的影响：
+
 $$
-$1E(f)H_o(f) = [\phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c)]H_o(f) = M(f)
+E(f)H_o(f) = [\phi_{VSB}(f+f_c) + \phi_{VSB}(f-f_c)]H_o(f) = M(f)
 $$
-$1频谱图示说明
+
+频谱图示说明
 1.  $\Phi_{VSB}(f)$：原始 VSB 信号频谱  
 2.  $E(f)$：解调后的频谱，显示重叠区域  
 3.  $E(f)H_o(f)$：经过滤波器补偿后的频谱，恢复出 $M(f)$
 ![](Assests/Pasted%20image%2020251121140658.png)
 
 求解接收端滤波器 $H_{o}(f)$：
+
 $$
-$1M(f)=[\phi_{VSB}(f+f_{c})+\phi_{VSB}(f-f_{c})]~{H_o}(f)
+M(f)=[\phi_{VSB}(f+f_{c})+\phi_{VSB}(f-f_{c})]~{H_o}(f)
 $$
-$1使用 VSB 已调信号表达式：
+
+使用 VSB 已调信号表达式：
+
 $$
-$1\phi_{VSB}(f)=[M(f+f_{c})+M(f-f_{c})]~{H_{i}}(f)
+\phi_{VSB}(f)=[M(f+f_{c})+M(f-f_{c})]~{H_{i}}(f)
 $$
-$1可推导得：
+
+可推导得：
+
 $$
-$1\phi_{VSB}(f+f_{c})=[M(f+2f_{c})+M(f)]~{H_{i}}(f+f_{c})
+\phi_{VSB}(f+f_{c})=[M(f+2f_{c})+M(f)]~{H_{i}}(f+f_{c})
 $$
+
 $$
-$1\phi_{VSB}(f-f_{c})=[M(f)+M(f-2f_{c})]~{H_{i}}(f-f_{c})
+\phi_{VSB}(f-f_{c})=[M(f)+M(f-2f_{c})]~{H_{i}}(f-f_{c})
 $$
+
 $$
-$1M(f)=[[M(f+2f_{c})+M(f)]~{H_{i}}(f+f_{c})+[M(f)+M(f-2f_{c})]~{H_{i}}(f-f_{c})]~{H_o}(f)
+M(f)=[[M(f+2f_{c})+M(f)]~{H_{i}}(f+f_{c})+[M(f)+M(f-2f_{c})]~{H_{i}}(f-f_{c})]~{H_o}(f)
 $$
-$1消除 $\pm 2f_{c}$ 处的频谱分量（将被低通滤波器抑制）：
+
+消除 $\pm 2f_{c}$ 处的频谱分量（将被低通滤波器抑制）：
+
 $$
-$1M(f)=M(f)[H_{i}(f+f_{c})+H_{i}(f-f_{c})]~{H_o}(f)
+M(f)=M(f)[H_{i}(f+f_{c})+H_{i}(f-f_{c})]~{H_o}(f)
 $$
-$1最终得到：
+
+最终得到：
+
 $$
-$1H_{o}(f)=\frac{1}{H_{i}(f+f_{c})+H_{i}(f-f_{c})} \quad |f|\leq B
+H_{o}(f)=\frac{1}{H_{i}(f+f_{c})+H_{i}(f-f_{c})} \quad |f|\leq B
 $$
+
 其中， $H_i$ 是在发射端的VBS滤波器。
 
 
 基于以上定义，VSB 信号的频域和时域表达式分别为：
 
 **频域表达式**：
+
 $$
-$1\Phi_{\mathrm{VSB}}(f) = \frac{M(f-f_{c}) + M(f+f_{c})}{2} + \frac{M_{v}(f-f_{c}) - M_{v}(f+f_{c})}{2j}
+\Phi_{\mathrm{VSB}}(f) = \frac{M(f-f_{c}) + M(f+f_{c})}{2} + \frac{M_{v}(f-f_{c}) - M_{v}(f+f_{c})}{2j}
 $$
-$1**时域表达式**（通过傅里叶反变换得到）：
+
+**时域表达式**（通过傅里叶反变换得到）：
+
 $$
-$1\varphi_{\mathrm{VSB}}(t) = m(t)\cos 2\pi f_{c}t + m_{v}(t)\sin 2\pi f_{c}t
+\varphi_{\mathrm{VSB}}(t) = m(t)\cos 2\pi f_{c}t + m_{v}(t)\sin 2\pi f_{c}t
 $$
-$1**结构解读**：此式表明 VSB 信号是**同相分量** ($m(t)\cos$) 和**正交分量** ($m_v(t)\sin$) 的正交合成。
+
+**结构解读**：此式表明 VSB 信号是**同相分量** ($m(t)\cos$) 和**正交分量** ($m_v(t)\sin$) 的正交合成。
 
 #### VSB 与 SSB 的对比
 
@@ -129,10 +158,12 @@ $1**结构解读**：此式表明 VSB 信号是**同相分量** ($m(t)\cos$) 和
 #### VSB Signal Generation
 ![](Assests/Pasted%20image%2020251121165014.png)
 -   SSB 和 VSB 的时域表达式具有相似性：
+
 $$
-$1\phi_{VSB}(t) = m(t) \cos\omega_{c} t \mp m_{Q}(t) \sin\omega_{c} t
+\phi_{VSB}(t) = m(t) \cos\omega_{c} t \mp m_{Q}(t) \sin\omega_{c} t
 $$
-$1-   先前讨论过的类似包络检波过程同样适用于 VSB。
+
+-   先前讨论过的类似包络检波过程同样适用于 VSB。
 ![](Assests/Pasted%20image%2020251121165552.png)
 -   VSB 的带宽介于 AM 与 SSB 之间。
     -   其对载波幅度的要求也同样介于两者之间。

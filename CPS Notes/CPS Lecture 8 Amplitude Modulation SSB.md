@@ -16,26 +16,34 @@
 - 对信号的负频率部分 (negative frequency spectrum) 产生 +90° 的相移
 
 对于信号  $x(t)$ ，其希尔伯特变换  $x_h(t)$  定义为：
+
 $$
 x_h(t)=\mathcal{H}\{x(t)\}=\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\alpha)}{t-\alpha}  d\alpha
 $$
-$1这等价于信号与核函数的卷积运算：
+
+这等价于信号与核函数的卷积运算：
+
 $$
 x_h(t) = x(t) * \frac{1}{\pi t}
 $$
-$1希尔伯特变换在频域中定义为信号频谱与传递函数的乘积：
+
+希尔伯特变换在频域中定义为信号频谱与传递函数的乘积：
+
 $$
-$1X_h(f) = -jX(f)\mathrm{sgn}(f)
+X_h(f) = -jX(f)\mathrm{sgn}(f)
 $$
-$1希尔伯特变换器的传递函数为：
+
+希尔伯特变换器的传递函数为：
+
 $$
-$1H(f) = -j\mathrm{sgn}(f) = 
+H(f) = -j\mathrm{sgn}(f) = 
 \begin{cases} 
 -j = 1\cdot e^{-j\pi/2}, & f > 0 \\
 j = 1\cdot e^{j\pi/2}, & f < 0 
 \end{cases}
 $$
-$1从图示可以看出希尔伯特变换的频域特性：
+
+从图示可以看出希尔伯特变换的频域特性：
 ![](Assests/Pasted%20image%2020251121084105.png)
 
 - $|H(f)| = 1$（对所有  $f \neq 0$ ）
@@ -56,35 +64,45 @@ $1从图示可以看出希尔伯特变换的频域特性：
 
 右半信号定义为消息谱在正频率部分的分量：
 
-$$ \begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned} $$
-$1其中：
+$$
+\begin{aligned} M_{+}(f) &= M(f)\cdot u(f) = M(f)\frac{1}{2}[1+\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)+jM_{h}(f)]\end{aligned}
+$$
+
+其中：
 - $u(f)$ 是单位阶跃函数 (unit step function)
 - $\mathrm{sgn}(f)$ 是符号函数 (signum function)
 - $M_h(f)$ 是  $M(f)$  的希尔伯特变换 (Hilbert transform)
 
 左半信号定义为消息谱在负频率部分的分量：
 
-$$ \begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned} $$
-$1![](Assests/Pasted%20image%2020251121084824.png)
+$$
+\begin{aligned} M_{-}(f) &= M(f)u(-f) = M(f)\frac{1}{2}[1-\mathrm{sgn}(f)]\\ &=\frac{1}{2}[M(f)-jM_{h}(f)]\end{aligned} 
+$$
+
+![](Assests/Pasted%20image%2020251121084824.png)
 
 -   上边带频谱可以用消息信号  $m(t)$  及其希尔伯特变换  $m_h(t)$  表示为：
-    $$
-    \begin{aligned}
-    \Phi_{\mathrm{USB}}(f) &= M_{+}(f-f_{c}) + M_{-}(f+f_{c}) \\
-    &=\frac{1}{2}[M(f-f_{c}) + M(f+f_{c})] - \frac{1}{2j}[M_{h}(f-f_{c}) - M_{h}(f+f_{c})]
-    \end{aligned}
-    $$
-$1![](Assests/Pasted%20image%2020251121091129.png)
+
+$$
+\begin{aligned}
+\Phi_{\mathrm{USB}}(f) &= M_{+}(f-f_{c}) + M_{-}(f+f_{c}) \\
+&=\frac{1}{2}[M(f-f_{c}) + M(f+f_{c})] - \frac{1}{2j}[M_{h}(f-f_{c}) - M_{h}(f+f_{c})]
+\end{aligned}
+$$
+
+![](Assests/Pasted%20image%2020251121091129.png)
 
 -   利用傅里叶变换的频移特性，进行傅里叶反变换得到时域表达式：
     -   上边带信号： $\varphi_{\mathrm{USB}}(t) = m(t)\cos\omega_{c}t - m_{h}(t)\sin\omega_{c}t$ 
     -   下边带信号： $\varphi_{\mathrm{LSB}}(t) = m(t)\cos\omega_{c}t + m_{h}(t)\sin\omega_{c}t$ 
 
 -   单边带信号的通用时域表达式可以统一写为：
-    $$
-    \varphi_{\mathrm{SSB}}(t) = m(t)\cos\omega_{c}t \mp m_{h}(t)\sin\omega_{c}t
-    $$
-$1#### SSB Signal Generation
+
+$$
+\varphi_{\mathrm{SSB}}(t) = m(t)\cos\omega_{c}t \mp m_{h}(t)\sin\omega_{c}t
+$$
+
+#### SSB Signal Generation
 ![](Assests/Pasted%20image%2020251121091453.png)
 
 ##### 选择性滤波法 (Selective Filtering)
@@ -102,10 +120,18 @@ $1#### SSB Signal Generation
 ![](Assests/Pasted%20image%2020251121093853.png)
 
 -   为防止下边带 (Lower Sideband) 在频率原点附近产生干扰，需满足设计条件：
-    $$2(\omega_{c1}+\omega_{g})\geq 0.01\omega_{c2}$$
-$1-   为在目标频率  $\omega_{c2}$  处获得足够的间隙带，需满足设计条件：
-    $$\omega_{c1}\geq B+\omega_{g}$$
-$1其中参数定义：
+  
+$$
+2(\omega_{c1}+\omega_{g})\geq 0.01\omega_{c2}
+$$
+
+-   为在目标频率  $\omega_{c2}$  处获得足够的间隙带，需满足设计条件：
+    
+$$
+\omega_{c1}\geq B+\omega_{g}
+$$
+
+其中参数定义：
 -   $\omega_g$：基带信号的间隙带宽 (Gap-bandwidth)
 -   $B$：基带信号的带宽 (Bandwidth)  
 -   $\omega_{c1}$：中间载波频率 (Intermediate carrier frequency)
@@ -115,22 +141,31 @@ $1其中参数定义：
 其Demodulator与DSB-SC的synchronous demodulator完全一致
 ![](Assests/Pasted%20image%2020251121110222.png)
 -   单边带抑制载波 (SSB-SC) 信号表达式为：
-    $$
-    \varphi_{\mathrm{SSB}}(t)=m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t
-    $$
-$1-   解调过程将该信号与载波相乘：
-    $$
-    \varphi_{\mathrm{SSB}}(t) \cos \omega_{c} t=[m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t] \cdot 2 \cos \omega_{c} t
-    $$
-$1-   展开后得到：
-    $$
-    =m(t)[1+\cos 2 \omega_{c} t] \mp m_{h}(t) \sin 2 \omega_{c} t
-    $$
-$1-   可进一步表示为：
-    $$
-    =m(t)+\underbrace{[m(t) \cos 2 \omega_{c} t \mp m_{h}(t) \sin 2 \omega_{c} t]}_{\text{载波频率为 } 2\omega_{c} \text{ 的 SSB-SC 信号}}
-    $$
-$1-   解调结果分析：
+  
+
+$$
+\varphi_{\mathrm{SSB}}(t)=m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t
+$$
+
+-   解调过程将该信号与载波相乘：
+
+$$
+\varphi_{\mathrm{SSB}}(t) \cos \omega_{c} t=[m(t) \cos \omega_{c} t \mp m_{h}(t) \sin \omega_{c} t] \cdot 2 \cos \omega_{c} t
+$$
+
+-   展开后得到：
+
+$$
+=m(t)[1+\cos 2 \omega_{c} t] \mp m_{h}(t) \sin 2 \omega_{c} t
+$$
+
+-   可进一步表示为：
+
+$$
+=m(t)+\underbrace{[m(t) \cos 2 \omega_{c} t \mp m_{h}(t) \sin 2 \omega_{c} t]}_{\text{载波频率为 } 2\omega_{c} \text{ 的 SSB-SC 信号}}
+$$
+
+-   解调结果分析：
     -   产生基带信号 (baseband signal)  $m(t)$
     -   同时产生载波频率为  $2\omega_{c}$  的另一 SSB 信号
     -   通过低通滤波器 (low-pass filter) 可抑制不需要的 SSB 分量，得到所需的基带信号  $m(t)$

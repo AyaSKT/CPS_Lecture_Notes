@@ -9,7 +9,8 @@
 
 $$
 \omega_{i}(t)=\omega_{c}+k_{f}m(t)
-$
+$$
+
 该公式对应于基本的 FM 信号。
 
 ---
@@ -21,9 +22,11 @@ $
 
 ### 使用 DSB-SC 的 NBFM 生成
 在生成NBFM时，可以通过利用 DSB-SC 的AM调制来近似 FM 泰勒展开的前两项，从而间接生成FM信号：
-$
+
+$$
 \varphi^{FM}(t) = A\cos(\omega_c t) - A k_f a(t) \sin(\omega_c t)
 $$
+
 ![](Assests/Pasted%20image%2020251201160116.png)
 **使用 DSB-SC 调制器:** 
 - 这些近似值（NBFM 和 NBPM）表明了使用 DSB-SC 调制器生成窄带 FM 和 PM 信号的一种可能方法。
@@ -36,9 +39,10 @@ $$
 ### 窄带 FM (NBFM) 的条件 ($\beta<1$)
 调制指数 $\beta$ 定义为：
 
-$
+$$
 \beta=\frac{\Delta f}{f_{m}}
-$
+$$
+
 其中:
 - $\Delta f$: 由调制引起的载波频率的峰值频偏 
 - $f_{m}$: 调制信号的频率 
@@ -52,9 +56,11 @@ $
 在阿姆斯特朗间接法中，首先生成 NBFM，然后使用额外的**倍频器** (frequency multipliers) 将其转换为 WBFM。 
 
 一个非线性器件可以具有以下通用特性：
-$
+
+$$
 y(t)=a_{0}+a_{1}x(t)+a_{2}x^{2}(t)+...+a_{n}x^{n}(t)
 $$
+
 - 如果输入 $x(t)$ 是一个包含调制的余弦函数，那么输出将包含原始频率的谐波分量。 
 - 输出频谱包括以下分量： $\omega_{c},2\omega_{c},...,n\omega_{c}$ - 以及相应的频偏： $\Delta f,2\Delta f,...,n\Delta f$ 
 - 一个以 $n\omega_{c}$ 为中心的带通滤波器可以恢复出一个频偏被乘以 n 倍的 FM 信号。 

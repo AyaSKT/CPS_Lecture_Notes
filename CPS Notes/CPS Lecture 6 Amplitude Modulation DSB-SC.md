@@ -6,10 +6,12 @@
 
 #### 调制类型： AM FM PM
 对于
+
 $$
 s(t) = A(t) \cos{(2 \pi f_c(t)t + \phi(t))}
 $$
-$1- AM:  $A(t)$ 正比于 $m(t)$ 
+
+- AM:  $A(t)$ 正比于 $m(t)$ 
 - FM:  $f_c(t)$ 正比于 $m(t)$
 - PM:  $\phi(t)$ 正比于 $m(t)$
 
@@ -24,10 +26,12 @@ $1- AM:  $A(t)$ 正比于 $m(t)$
 一个baseband的message 乘上 一个有固定频率和相位的余弦波余弦波 $\cos{(2 \pi f_c(t)t + \phi(t))}$ 。 
 在DSB-SC中，保持 $A(t) = 1$ 和 $\phi (t) = 0$ ，
 则调制后信号为：
+
 $$
 \varphi_{DSB-SC} = m(t) \cos{(2 \pi f_c t)}
 $$
-$1![](Assests/Pasted%20image%2020251120105023.png)
+
+![](Assests/Pasted%20image%2020251120105023.png)
 
 对于一个带宽为 `B Hz` 的基带信号 `m(t)`，其调制信号的带宽为 `2B Hz`。
 
@@ -50,10 +54,12 @@ Synchronising the receiver requires a more complex system.
 假如transimitter在发送时带有一个 $- \frac{ \pi }{2}$ 的相位，则在解调时会导致baseband相互抵消
 ![](Assests/Pasted%20image%2020251120110632.png)
 一种解决方案是使用复指数进行解调：
+
 $$
 e^{j2 \pi f_c t} \Leftrightarrow \delta(f - f_c)
 $$
-$1![](Assests/Pasted%20image%2020251120111417.png)
+
+![](Assests/Pasted%20image%2020251120111417.png)
 此时reciver处理的是复信号。它将乘性的相位误差因子 cos(θ) 变成了一个加性的旋转因子 $e^{j \theta}$ 。在复信号中，相位仅代表方向而非幅度，因此不会对结果的幅度造成影响，消除了相位偏移的问题。
 ![](Assests/Pasted%20image%2020251120111635.png)
 
