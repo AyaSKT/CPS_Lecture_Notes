@@ -16,19 +16,27 @@
 - 对信号的负频率部分 (negative frequency spectrum) 产生 +90° 的相移
 
 对于信号  $x(t)$ ，其希尔伯特变换  $x_h(t)$  定义为：
-$$x_h(t)=\mathcal{H}\{x(t)\}=\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\alpha)}{t-\alpha}  d\alpha$$
+$$
+x_h(t)=\mathcal{H}\{x(t)\}=\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\alpha)}{t-\alpha}  d\alpha
+$$
 这等价于信号与核函数的卷积运算：
-$$x_h(t) = x(t) * \frac{1}{\pi t}$$
+$$
+x_h(t) = x(t) * \frac{1}{\pi t}
+$$
 
 希尔伯特变换在频域中定义为信号频谱与传递函数的乘积：
-$$X_h(f) = -jX(f)\mathrm{sgn}(f)$$
+$$
+X_h(f) = -jX(f)\mathrm{sgn}(f)
+$$
 
 希尔伯特变换器的传递函数为：
-$$H(f) = -j\mathrm{sgn}(f) = 
+$$
+H(f) = -j\mathrm{sgn}(f) = 
 \begin{cases} 
 -j = 1\cdot e^{-j\pi/2}, & f > 0 \\
 j = 1\cdot e^{j\pi/2}, & f < 0 
-\end{cases}$$
+\end{cases}
+$$
 
 从图示可以看出希尔伯特变换的频域特性：
 ![](Assests/Pasted%20image%2020251121084105.png)

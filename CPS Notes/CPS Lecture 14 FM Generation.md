@@ -5,8 +5,10 @@
 直接法使用一个 VCO（压控振荡器），其频率由外部电压控制。 
 - VCO 的振荡频率随控制电压线性变化。 
 - 通过将调制信号 $m(t)$ 纳入控制信号，就可以生成 FM 波。 
-- 这产生的瞬时角频率表示为： 
-$$ \omega_{i}(t)=\omega_{c}+k_{f}m(t) $$
+- 这产生的瞬时角频率表示为：
+$$
+\omega_{i}(t)=\omega_{c}+k_{f}m(t)
+$$
 该公式对应于基本的 FM 信号。
 
 ---
@@ -17,8 +19,10 @@ $$ \omega_{i}(t)=\omega_{c}+k_{f}m(t) $$
 - 相反，它涉及几个中间步骤来实现所需的输出。
 
 ### 使用 DSB-SC 的 NBFM 生成
-在生成NBFM时，可以通过利用 DSB-SC 的AM调制来近似 FM 泰勒展开的前两项，从而间接生成FM信号。
-$$\varphi^{FM}(t) = A\cos(\omega_c t) - A k_f a(t) \sin(\omega_c t)$$
+在生成NBFM时，可以通过利用 DSB-SC 的AM调制来近似 FM 泰勒展开的前两项，从而间接生成FM信号：
+$$
+\varphi^{FM}(t) = A\cos(\omega_c t) - A k_f a(t) \sin(\omega_c t)
+$$
 ![](Assests/Pasted%20image%2020251201160116.png)
 **使用 DSB-SC 调制器:** 
 - 这些近似值（NBFM 和 NBPM）表明了使用 DSB-SC 调制器生成窄带 FM 和 PM 信号的一种可能方法。
@@ -29,7 +33,11 @@ $$\varphi^{FM}(t) = A\cos(\omega_c t) - A k_f a(t) \sin(\omega_c t)$$
 - 可以使用非线性设备来限制带通信号的幅度，从而消除大部分这种失真。
 
 ### 窄带 FM (NBFM) 的条件 ($\beta<1$)
-调制指数 $\beta$ 定义为： $$ \beta=\frac{\Delta f}{f_{m}} $$ 其中:
+调制指数 $\beta$ 定义为：
+$$
+\beta=\frac{\Delta f}{f_{m}}
+$$
+其中:
 - $\Delta f$: 由调制引起的载波频率的峰值频偏 
 - $f_{m}$: 调制信号的频率 
 窄带调频 (NBFM) 是指频偏远小于调制频率的一种 FM。 
@@ -41,7 +49,10 @@ $$\varphi^{FM}(t) = A\cos(\omega_c t) - A k_f a(t) \sin(\omega_c t)$$
 ### 频率和带宽倍增器
 在阿姆斯特朗间接法中，首先生成 NBFM，然后使用额外的**倍频器** (frequency multipliers) 将其转换为 WBFM。 
 
-一个非线性器件可以具有以下通用特性： $$ y(t)=a_{0}+a_{1}x(t)+a_{2}x^{2}(t)+...+a_{n}x^{n}(t) $$
+一个非线性器件可以具有以下通用特性：
+$$
+y(t)=a_{0}+a_{1}x(t)+a_{2}x^{2}(t)+...+a_{n}x^{n}(t)
+$$
 - 如果输入 $x(t)$ 是一个包含调制的余弦函数，那么输出将包含原始频率的谐波分量。 
 - 输出频谱包括以下分量： $\omega_{c},2\omega_{c},...,n\omega_{c}$ - 以及相应的频偏： $\Delta f,2\Delta f,...,n\Delta f$ 
 - 一个以 $n\omega_{c}$ 为中心的带通滤波器可以恢复出一个频偏被乘以 n 倍的 FM 信号。 

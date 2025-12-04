@@ -8,10 +8,14 @@
 -   这种将载波与已调信号一同传输的方式，被称为常规调幅 (conventional AM)（或AM，也可称为DSB-WC）。
 
 #### DSB-WC Modulation
-$$\varphi_{AM}(t) = [A + m(t)] \cos{(2 \pi f_c t)}$$
+$$
+\varphi_{AM}(t) = [A + m(t)] \cos{(2 \pi f_c t)}
+$$
 ![](Assests/Pasted%20image%2020251120143359.png)
-其频谱与DSB-SC基本一致，但在 $\pm f_c$ 处有两个额外的冲激响应。
-$$[A+m(t)] \cos (2 \pi f_c t) \Leftrightarrow \frac{1}{2}[M(f+f_c)+M(f-f_c)]+\frac{A}{2}[\delta(f+f_c)+\delta(f-f_c)]$$
+其频谱与DSB-SC基本一致，但在 $\pm f_c$ 处有两个额外的冲激响应：
+$$
+[A+m(t)] \cos (2 \pi f_c t) \Leftrightarrow \frac{1}{2}[M(f+f_c)+M(f-f_c)]+\frac{A}{2}[\delta(f+f_c)+\delta(f-f_c)]
+$$
 ![](Assests/Pasted%20image%2020251120143706.png))
 
 #### DSB-WC的缺点
@@ -37,8 +41,10 @@ $$
 ![](Assests/Pasted%20image%2020251120145341.png)
 
 #### AM 调制指数（Modulation Index）
-The modulation index μ is the ratio of the peak value of the message signal( $m_p$ ) to the amplitude of the carrier.
-$$\mu = \frac{m_p}{A_c}$$
+The modulation index μ is the ratio of the peak value of the message signal( $m_p$ ) to the amplitude of the carrier：
+$$
+\mu = \frac{m_p}{A_c}
+$$
 ![](Assests/Pasted%20image%2020251120145953.png)
 **更大的调制指数可以减少功耗，但更难以解调。当 $\mu > 1$ 时出现过调制**
 
