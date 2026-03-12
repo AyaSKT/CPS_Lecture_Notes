@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "790af30f6ab8fcdd",
+            "id": "23fa549e3e5379e3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "README"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "292b8ae60c882be2",
@@ -162,32 +166,46 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "790af30f6ab8fcdd",
+  "active": "23fa549e3e5379e3",
   "lastOpenFiles": [
+    "CPS Notes/CPS Lecture 19 Noise in Digital Modulation.md",
+    "README.md",
+    "CPS Notes/CPS Lecture 8 Amplitude Modulation SSB.md",
+    "CPS Notes/CPS Lecture 7 Amplitude Modulation DSB-WC.md",
+    "CPS Notes/CPS Lecture 9 Amplitude Modulation VSB.md",
+    "CPS Notes/CPS Lecture 12 FM Bandwidth Analysis.md",
+    "CPS Notes/CPS Lecture 18 Digital Modulation in AWGN Channel.md",
+    "CPS Notes/CPS Lecture 16 & 17 Analog to Digital Conversion.md",
+    "CPS Notes/未命名思维导图.md",
+    "CPS Notes/CPS Lecture 11 FM and PM.md",
+    "CPS Notes/CPS Lecture 6 Amplitude Modulation DSB-SC.md",
+    "CPS Notes/CPS Lecture 14 FM Generation.md",
+    "CPS Notes/CPS Lecture 13 FM Demodulation.md",
+    "CPS Notes/Assests/Pasted.md",
+    "CPS Notes/未命名.md",
+    "未命名.base",
+    "CPS Notes/Assests/Pasted image 20251222161726.png",
+    "CPS Notes/Assests/Pasted image 20251222160631.png",
+    "CPS Notes/Assests/Pasted image 20251222160511.png",
+    "CPS Notes/Assests/Pasted image 20251222155423.png",
+    "CPS Notes/Assests/Pasted image 20251222152938.png",
+    "CPS Notes/Assests/Pasted image 20251222152910.png",
+    "CPS Notes/Assests/Pasted image 20251222152827.png",
+    "CPS Notes/Assests/Pasted image 20251222152802.png",
+    "CPS Notes/Assests/Pasted image 20251222152738.png",
+    "CPS Notes/Assests/Pasted image 20251222152645.png",
     "未命名 2.base",
     "未命名 1.base",
-    "未命名.base",
     "CPS Lecture 18 Digital Modulation in AWGN Channel.md",
     "CPS Lecture 16 & 17 Analog to Digital Conversion.md",
-    "Assests/Pasted image 20251203162855.png",
     "CPS Lecture 14 FM Generation.md",
-    "Assests/Pasted image 20251202104629.png",
     "CPS Lecture 13 FM Demodulation.md",
     "CPS Lecture 12 FM Bandwidth Analysis.md",
-    "Assests/Pasted image 20251201162828.png",
-    "Assests/Pasted image 20251201162917.png",
-    "Assests/Pasted image 20251201162830.png",
-    "Assests/Pasted image 20251201160116.png",
-    "Assests/Pasted image 20251201154641.png",
-    "Assests/Pasted image 20251201150920.png",
-    "Assests/Pasted image 20251201150816.png",
     "CPS Lecture 6 Amplitude Modulation DSB-SC.md",
-    "Assests/Pasted image 20251201145651.png",
     "Analysis.md",
     "CPS Lecture 11 FM and PM.md",
     "CPS Lecture 9 Amplitude Modulation VSB.md",
     "CPS Lecture 8 Amplitude Modulation SSB.md",
-    "CPS Lecture 7 Amplitude Modulation DSB-WC.md",
-    "Assests/Pasted.md"
+    "CPS Lecture 7 Amplitude Modulation DSB-WC.md"
   ]
 }

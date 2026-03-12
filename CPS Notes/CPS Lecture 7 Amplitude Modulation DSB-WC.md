@@ -20,7 +20,7 @@ $$
 [A+m(t)] \cos (2 \pi f_c t) \Leftrightarrow \frac{1}{2}[M(f+f_c)+M(f-f_c)]+\frac{A}{2}[\delta(f+f_c)+\delta(f-f_c)]
 $$
 
-![](Assests/Pasted%20image%2020251120143706.png))
+![](Assests/Pasted%20image%2020251120143706.png)
 
 #### DSB-WC的缺点
 

@@ -1,7 +1,8 @@
 # CPS_Lecture_Notes
+
+
 推荐下载到obsidian内打开，github预览可能存在公式渲染不正确。  
 如果对你有帮助，就请点个Star吧，谢谢喵~  
-
 
 ## Index
 
@@ -13,4 +14,6 @@
 - [CPS Lecture 12 FM Bandwidth Analysis](CPS%20Notes/CPS%20Lecture%2012%20FM%20Bandwidth%20Analysis.md)
 - [CPS Lecture 13 FM Demodulation](CPS%20Notes/CPS%20Lecture%2013%20FM%20Demodulation.md)
 - [CPS Lecture 14 FM Generation](CPS%20Notes/CPS%20Lecture%2014%20FM%20Generation.md)
-## To Be Continued
+- [CPS Lecture 16 & 17 Analog to Digital Conversion](CPS%20Notes/CPS%20Lecture%2016%20%26%2017%20Analog%20to%20Digital%20Conversion.md)
+- [CPS Lecture 18 Digital Modulation in AWGN Channel](CPS%20Notes/CPS%20Lecture%2018%20Digital%20Modulation%20in%20AWGN%20Channel.md)
+- [CPS Lecture 19 Noise in Digital Modulation](CPS%20Notes/CPS%20Lecture%2019%20Noise%20in%20Digital%20Modulation.md)

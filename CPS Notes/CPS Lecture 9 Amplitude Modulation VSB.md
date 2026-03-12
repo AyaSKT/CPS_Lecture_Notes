@@ -29,7 +29,7 @@ $$
 \phi_{DSB}(f)=[M(f+f_c)+M(f-f_c)]
 $$
 
-    然后使其通过一个 VSB 成形滤波器 $ H_i(f) $：
+然后使其通过一个 VSB 成形滤波器 $ H_i(f) $：
 
 $$
 \phi_{VSB}(f)=[M(f+f_c)+M(f-f_c)]H_i(f)
@@ -44,7 +44,7 @@ Baseband signal可以被一个有恰当的VSB filter $H_0(f)$ 同步检波器精
 ![](Assests/Pasted%20image%2020251121135846.png)
 
 #### VSB Shaping Filter
-需要通过同步解调 (synchronous demodulation) 从接收到的 VSB 信号中恢复出原始消息信号 $ m(t) $。
+需要通过同步解调 (synchronous demodulation) 从接收到的 VSB 信号中恢复出原始消息信号 $m(t)$。
 
 ## 解调过程
 1. 与载波相乘  
